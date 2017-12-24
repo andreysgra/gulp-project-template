@@ -1,0 +1,55 @@
+{
+  "name": "gulp-project-template",
+  "version": "1.0.0",
+  "description": "Базовый шаблон проекта со сборкой на Gulp",
+  "main": "index.js",
+  "scripts": {
+    "stylelint": "stylelint \"src/less/**/*.less\" --syntax less",
+    "test": "gulp lintspaces && npm run stylelint",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve",
+    "deploy": "npm run build && gulp deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andreysgra/gulp-project-template.git"
+  },
+  "author": "Andrey Grachev <andreysgra@gmail.com> (https://github.com/andreysgra)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreysgra/gulp-project-template/issues"
+  },
+  "homepage": "https://github.com/andreysgra/gulp-project-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "browser-sync": "^2.21.0",
+    "css-mqpacker": "^6.0.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-lintspaces": "^0.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-jpegoptim": "^5.1.0",
+    "run-sequence": "^2.2.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0",
+    "picturefill": "^3.0.2",
+    "svg4everybody": "^2.1.9"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ]
+}
