@@ -146,16 +146,6 @@ gulp.task('serve', function () {
   gulp.watch('src/js/*.js', ['js']);
 });
 
-// Отправка собранного проекта на GitHub Pages
-gulp.task('deploy', function () {
-  const ghPages = require('gulp-gh-pages');
-
-  console.log('Публикация проекта на GitHub Pages...');
-
-  return gulp.src('build/**/*')
-    .pipe(ghPages());
-});
-
 // Сборка проекта
 gulp.task('build', function (callback) {
   run('clean:build', 'copy:build', 'style', 'js', 'images', 'sprite', 'clean:icons', callback);
