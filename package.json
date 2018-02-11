@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/andreysgra/gulp-project-template#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^7.2.6",
     "browser-sync": "^2.23.6",
     "css-mqpacker": "^6.0.2",
     "del": "^3.0.0",
