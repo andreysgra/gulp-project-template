@@ -64,7 +64,7 @@ gulp.task('style', function () {
 
   let plugins = [
     autoprefixer(),
-    mqpacker()
+    mqpacker({sort: true})
   ];
 
   console.log('Компиляция стилей...');
@@ -111,7 +111,13 @@ gulp.task('images', function () {
     .pipe(imagemin([
       imagemin.optipng(),
       imagemin.svgo({
-        plugins: [{removeTitle: true}]
+        plugins: [
+          {removeViewBox: false},
+          {removeTitle: true},
+          {cleanupNumericValues:
+            {floatPrecision: 0}
+          }
+        ]
       }),
       jpegoptim({
         max: 80,
