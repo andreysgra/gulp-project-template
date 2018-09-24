@@ -1,17 +1,18 @@
 # Базовый шаблон проекта со сборкой на Gulp
+
 [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 Шаблон предназначен для начала работы над проектом с использованием препроцессора LESS и сборщика проектов Gulp.
+
+* Автор: [Андрей Грачев](https://github.com/andreysgra/)
 
 ---
 
 ## Установка шаблона
 
-```
-
-$ git clone git@github.com:andreysgra/gulp-project-template.git project-name
-$ cd project-name
-
+```shell
+git clone git@github.com:andreysgra/gulp-project-template.git project-name
+cd project-name
 ```
 
 ---
@@ -29,7 +30,6 @@ $ cd project-name
 ## Структура
 
 * `src` - каталог для размещения файлов проекта
-
 
 [travis-image]: https://travis-ci.org/andreysgra/gulp-project-template.svg?branch=master
 [travis-url]: https://travis-ci.org/andreysgra/gulp-project-template
