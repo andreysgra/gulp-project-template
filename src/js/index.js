@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 svg4everybody();
 
-(function () {
+(function() {
 
 })();
