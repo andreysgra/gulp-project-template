@@ -1,39 +1,46 @@
 {
   "name": "gulp-project-template",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Базовый шаблон проекта со сборкой на Gulp",
-  "main": "index.html",
+  "main": "gulpfile.js",
   "scripts": {
-    "stylelint": "stylelint src/less/**/*.less --syntax less",
-    "test": "gulp lintspaces && npm run stylelint",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve",
-    "deploy": "npm run build && gh-pages -d build"
+    "start": "gulp",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "deploy": "npm run build && gh-pages -d build",
+    "dist": "npm run build && gulp zip",
+    "lintspaces": "gulp lintspaces",
+    "stylelint": "stylelint \"source/styles/**/*.less\" --syntax less",
+    "eslint": "eslint \"source/js/**/*.js\"",
+    "test": "npm run lintspaces && npm run stylelint && npm run eslint"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/andreysgra/gulp-project-template.git"
   },
   "author": "Andrey Grachev <andreysgra@gmail.com> (https://github.com/andreysgra)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/andreysgra/gulp-project-template/issues"
   },
   "homepage": "https://github.com/andreysgra/gulp-project-template#readme",
   "devDependencies": {
-    "autoprefixer": "^9.1.5",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.24.7",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
+    "cross-env": "^5.2.0",
     "css-mqpacker": "^7.0.0",
     "del": "^3.0.0",
-    "gh-pages": "^2.0.0",
-    "gulp": "^3.9.1",
+    "eslint": "^5.9.0",
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-changed": "^3.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
     "gulp-less": "^4.0.1",
     "gulp-lintspaces": "^1.0.0",
     "gulp-plumber": "^1.2.0",
@@ -42,32 +49,24 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgstore": "^7.0.0",
     "gulp-uglify": "^3.0.1",
-    "imagemin-jpegoptim": "^5.2.0",
-    "imagemin-webp": "^4.1.0",
-    "run-sequence": "^2.2.1",
-    "stylelint": "^9.5.0",
+    "gulp-zip": "^4.2.0",
+    "husky": "^1.2.0",
+    "imagemin-jpegoptim": "^6.0.0",
+    "require-dir": "^1.1.0",
+    "stylelint": "^9.8.0",
     "stylelint-config-standard": "^18.2.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "picturefill": "^3.0.2",
+    "@babel/polyfill": "^7.0.0",
+    "picturefill": "^3.0.3",
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [
     "defaults"
   ],
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "defaults"
-            ]
-          }
-        }
-      ]
-    ]
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
   }
 }
