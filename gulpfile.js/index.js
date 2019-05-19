@@ -8,7 +8,7 @@ task(
   'build',
   series(
     'clean',
-    parallel('fonts', 'copy', 'pages', 'styles', 'scripts', 'images', 'icons')
+    parallel('fonts', 'copy', 'pages', 'styles', 'scripts', 'images', 'webp', 'icons')
   )
 );
 

@@ -6,7 +6,7 @@ const changed = require('gulp-changed');
 const htmlmin = require('gulp-htmlmin');
 
 // Минификация HTML
-task('pages', function() {
+task('pages', () => {
   let optionsHtmlmin = {
     collapseInlineTagWhitespace: true,
     collapseWhitespace: true,

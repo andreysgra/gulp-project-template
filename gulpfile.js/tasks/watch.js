@@ -4,7 +4,7 @@ const settings = require('../settings');
 const { task, series, watch } = require('gulp');
 const browserSync = require('browser-sync').get('Local Server');
 
-task('watch', function() {
+task('watch', () => {
   watch(`${settings.paths.src.root}*.html`).on(
     'all',
     series('pages', browserSync.reload)
@@ -25,5 +25,9 @@ task('watch', function() {
   watch(`${settings.paths.src.images.icons}**/*.svg`).on(
     'all',
     series('icons', browserSync.reload)
+  );
+  watch(`${settings.paths.src.images.content}**/*.jpg`).on(
+    'all',
+    series('webp', browserSync.reload)
   );
 });

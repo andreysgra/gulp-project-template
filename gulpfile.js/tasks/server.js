@@ -5,7 +5,7 @@ const { task } = require('gulp');
 const browserSync = require('browser-sync').create('Local Server');
 
 // Локальный сервер
-task('server', function(done) {
+task('server', done => {
   browserSync.init({
     server: settings.paths.dest.root,
     cors: true,

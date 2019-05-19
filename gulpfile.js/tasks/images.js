@@ -10,7 +10,7 @@ const imageminJpegoptim = require('imagemin-jpegoptim');
 const isProd = !!process.env.NODE_ENV;
 
 // Оптимизация изображений
-task('images', function() {
+task('images', () => {
   let pluginsSvgo = [
     { removeViewBox: false },
     { removeTitle: true },

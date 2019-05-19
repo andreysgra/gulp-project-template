@@ -9,22 +9,21 @@ const sourcemaps = require('gulp-sourcemaps');
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const mqpacker = require('css-mqpacker');
 const csso = require('gulp-csso');
 const browserSync = require('browser-sync').get('Local Server');
 
 const isDev = !process.env.NODE_ENV;
 
 // Компиляция стилей проекта
-task('styles', function() {
-  let pluginsPostcss = [autoprefixer(), mqpacker({ sort: true })];
+task('styles', () => {
+  let pluginsPostcss = [autoprefixer()];
 
   return src(`${settings.paths.src.styles}style.less`)
     .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss(pluginsPostcss))
-    .pipe(csso({ comments: false }))
+    .pipe(csso({ forceMediaMerge: true, comments: false }))
     .pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(settings.paths.dest.styles))

@@ -4,11 +4,9 @@ const settings = require('../settings');
 const { task, src, dest } = require('gulp');
 const zip = require('gulp-zip');
 
-const leadingZero = function(number) {
-  return number < 10 ? `0${number}` : number;
-};
+const leadingZero = number => number < 10 ? `0${number}` : number;
 
-const getDateTime = function() {
+const getDateTime = () => {
   const now = new Date();
   const year = now.getFullYear();
   const month = leadingZero(now.getMonth() + 1);
@@ -20,7 +18,7 @@ const getDateTime = function() {
   return `${year}-${month}-${day}-${hours}${minutes}${seconds}`;
 };
 
-task('zip', function() {
+task('zip', () => {
   let dateTime = getDateTime();
   let fileName = `dist-${dateTime}.zip`;
 
