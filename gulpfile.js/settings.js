@@ -13,7 +13,8 @@ module.exports = {
       scripts: dirs.src + 'js/',
       images: {
         all: dirs.src + 'img/',
-        icons: dirs.src + 'img/icons/'
+        icons: dirs.src + 'img/icons/',
+        content: dirs.src + 'img/content/'
       },
       fonts: dirs.src + 'fonts/'
     },
@@ -22,7 +23,8 @@ module.exports = {
       styles: dirs.dest + 'css/',
       scripts: dirs.dest + 'js/',
       images: {
-        all: dirs.dest + 'img/'
+        all: dirs.dest + 'img/',
+        content: dirs.dest + 'img/content/'
       },
       fonts: dirs.dest + 'fonts/'
     },

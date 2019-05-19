@@ -12,13 +12,13 @@ const uglify = require('gulp-uglify');
 const isDev = !process.env.NODE_ENV;
 
 // Минификация JS файлов
-task('scripts', function() {
-  return src(`${settings.paths.src.scripts}**/*.js`)
+task('scripts', () =>
+  src(`${settings.paths.src.scripts}**/*.js`)
     .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(babel())
     .pipe(concat('index.js'))
     .pipe(uglify())
     .pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(settings.paths.dest.scripts));
-});
+    .pipe(dest(settings.paths.dest.scripts))
+);

@@ -10,7 +10,7 @@ const svgstore = require('gulp-svgstore');
 const isProd = !!process.env.NODE_ENV;
 
 // Сборка SVG спрайта
-task('icons', function() {
+task('icons', () => {
   let pluginsSvgo = [
     { removeViewBox: false },
     { removeTitle: true },

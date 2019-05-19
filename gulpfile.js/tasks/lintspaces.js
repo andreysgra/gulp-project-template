@@ -5,8 +5,8 @@ const { task, src } = require('gulp');
 const lintspaces = require('gulp-lintspaces');
 
 // Линтинг в соответствии с настройками .editorconfig
-task('lintspaces', function() {
-  return src([
+task('lintspaces', () =>
+  src([
     '*.json',
     '*.md',
     './gulpfile.js/**/*.js',
@@ -16,5 +16,5 @@ task('lintspaces', function() {
     `${settings.paths.src.styles}**/*.less`
   ])
     .pipe(lintspaces({ editorconfig: '.editorconfig' }))
-    .pipe(lintspaces.reporter());
-});
+    .pipe(lintspaces.reporter())
+);

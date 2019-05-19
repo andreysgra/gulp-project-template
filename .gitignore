@@ -1,12 +1,13 @@
-.DS_Store
-.idea
 *.ai
 *.log
 *.pdf
 *.psd
 *.sublime*
+npm-debug.*
+Thumbs.db
+.DS_Store
+.idea
+layouts
 build
 dist
 node_modules
-npm-debug.*
-Thumbs.db
