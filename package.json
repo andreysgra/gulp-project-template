@@ -1,6 +1,6 @@
 {
   "name": "gulp-project-template",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Базовый шаблон проекта со сборкой на Gulp",
   "main": "gulpfile.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "deploy": "npm run build && gh-pages -d build",
     "dist": "npm run build && gulp zip",
     "lintspaces": "gulp lintspaces",
-    "stylelint": "stylelint \"source/styles/**/*.less\" --syntax less",
+    "stylelint": "stylelint \"source/styles/**/*.less\"",
     "eslint": "eslint \"source/js/**/*.js\"",
     "test": "npm run lintspaces && npm run stylelint && npm run eslint"
   },
@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/andreysgra/gulp-project-template#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "autoprefixer": "^9.6.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
     "cross-env": "^5.2.0",
-    "del": "^4.1.1",
+    "del": "^5.0.0",
     "eslint": "^6.0.1",
     "gh-pages": "^2.0.1",
     "gulp": "^4.0.2",
@@ -49,7 +49,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "gulp-zip": "^5.0.0",
-    "husky": "^2.4.1",
+    "husky": "^3.0.0",
     "imagemin-jpegoptim": "^6.0.0",
     "require-dir": "^1.2.0",
     "stylelint": "^10.1.0",
@@ -61,7 +61,10 @@
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [
-    "defaults"
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not OperaMini all"
   ],
   "husky": {
     "hooks": {
