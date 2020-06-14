@@ -1,4 +1,4 @@
-# Базовый шаблон проекта со сборкой на Gulp
+# Базовый шаблон проекта со сборкой на Gulp с использованием Less
 
 [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 

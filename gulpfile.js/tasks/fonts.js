@@ -1,12 +1,14 @@
 'use strict';
 
-const settings = require('../settings');
-const { task, src, dest } = require('gulp');
+const { paths: { source, desination } } = require('../settings');
+const { src, dest } = require('gulp');
 const changed = require('gulp-changed');
 
 // Копирование шрифтов
-task('fonts', () =>
-  src(`${settings.paths.src.fonts}**/*.{woff,woff2}`)
-    .pipe(changed(settings.paths.dest.fonts))
-    .pipe(dest(settings.paths.dest.fonts))
-);
+
+const fonts = () =>
+  src(`${source.fonts}**/*.{woff,woff2}`)
+    .pipe(changed(desination.fonts))
+    .pipe(dest(desination.fonts));
+
+module.exports = fonts;
