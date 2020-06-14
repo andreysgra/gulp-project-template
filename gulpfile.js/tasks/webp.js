@@ -1,14 +1,15 @@
 'use strict';
 
-const settings = require('../settings');
-const { task, src, dest } = require('gulp');
+const { paths: { source, desination } } = require('../settings');
+const { src, dest } = require('gulp');
 const changed = require('gulp-changed');
-const webp = require('gulp-webp');
+const gulpWebp = require('gulp-webp');
 
 // Конвертация контентных изображений в формат WebP
-task('webp', () =>
-  src(`${settings.paths.src.images.content}**/*.jpg`)
-    .pipe(changed(settings.paths.dest.images.content, { extension: '.webp' }))
-    .pipe(webp({ quality: 80 }))
-    .pipe(dest(settings.paths.dest.images.content))
-);
+const webp = () =>
+  src(`${source.images.content}**/*.{jpg,png}`)
+    .pipe(changed(desination.images.content, { extension: '.webp' }))
+    .pipe(gulpWebp({ quality: 80 }))
+    .pipe(dest(desination.images.content));
+
+module.exports = webp;

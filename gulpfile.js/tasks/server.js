@@ -1,17 +1,18 @@
 'use strict';
 
-const settings = require('../settings');
-const { task } = require('gulp');
+const { paths: { desination } } = require('../settings');
 const browserSync = require('browser-sync').create('Local Server');
 
 // Локальный сервер
-task('server', done => {
+const server = done => {
   browserSync.init({
-    server: settings.paths.dest.root,
+    server: desination.root,
     cors: true,
     notify: false,
     reloadOnRestart: true
   });
 
   done();
-});
+};
+
+module.exports = server;

@@ -1,20 +1,21 @@
 'use strict';
 
-const settings = require('../settings');
-const { task, src } = require('gulp');
-const lintspaces = require('gulp-lintspaces');
+const { paths: { source } } = require('../settings');
+const { src } = require('gulp');
+const gulpLintspaces = require('gulp-lintspaces');
 
 // Линтинг в соответствии с настройками .editorconfig
-task('lintspaces', () =>
+const lintspaces = () =>
   src([
     '*.json',
     '*.md',
     './gulpfile.js/**/*.js',
-    `${settings.paths.src.root}*.html`,
-    `${settings.paths.src.scripts}**/*.js`,
-    `${settings.paths.src.images}**/*.svg`,
-    `${settings.paths.src.styles}**/*.less`
+    `${source.root}*.html`,
+    `${source.scripts}**/*.js`,
+    `${source.images}**/*.svg`,
+    `${source.styles}**/*.less`
   ])
-    .pipe(lintspaces({ editorconfig: '.editorconfig' }))
-    .pipe(lintspaces.reporter())
-);
+    .pipe(gulpLintspaces({ editorconfig: '.editorconfig' }))
+    .pipe(gulpLintspaces.reporter());
+
+module.exports = lintspaces;
