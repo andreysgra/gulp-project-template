@@ -7,7 +7,7 @@ const gulpIf = require('gulp-if');
 const imagemin = require('gulp-imagemin');
 const svgstore = require('gulp-svgstore');
 
-const isProd = !!process.env.NODE_ENV;
+const isProd = Boolean(process.env.NODE_ENV);
 
 // Сборка SVG спрайта
 const icons = () => {

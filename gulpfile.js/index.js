@@ -1,14 +1,14 @@
 'use strict';
 
-const dir = require('require-dir')('./tasks');
-const { clean, fonts, copy, pages, styles, scripts, images, webp, icons } = dir;
-const { zip, server, watcher, lintspaces } = dir;
+const tasks = require('require-dir')('./tasks');
+const { clean, fonts, pages, styles, scripts, images, webp, icons } = tasks;
+const { zip, server, watcher, lintspaces } = tasks;
 
 const { series, parallel } = require('gulp');
 
 const build = series(
   clean,
-  parallel(fonts, copy, pages, styles, scripts, images, webp, icons)
+  parallel(fonts, pages, styles, scripts, images, webp, icons)
 );
 
 exports.zip = series(zip);

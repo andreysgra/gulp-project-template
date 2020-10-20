@@ -29,12 +29,5 @@ module.exports = {
       fonts: dirs.dest + 'fonts/'
     },
     dist: './dist'
-  },
-  vendor: {
-    scripts: [
-      './node_modules/picturefill/dist/picturefill.min.js',
-      './node_modules/svg4everybody/dist/svg4everybody.min.js',
-      './node_modules/@babel/polyfill/dist/polyfill.min.js'
-    ]
   }
 };
