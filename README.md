@@ -1,4 +1,4 @@
-# Базовый шаблон проекта со сборкой на Gulp с использованием Less
+# Базовый шаблон проекта с использованием Gulp, Less, Webpack
 
 [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
@@ -47,7 +47,6 @@ cd project-name
 │   ├── js/           # каталог JS файлов
 │   ├── styles/       # каталог файлов стилей
 │   └── index.html    # файл разметки страницы
-├── .babelrc          # файл конфигурации Babel
 ├── .editorconfig     # файл конфигурации настроек редактора
 ├── .eslintrc.json    # файл конфигурации ESLint
 ├── .gitattributes    # файл атрибутов Git
@@ -57,7 +56,8 @@ cd project-name
 ├── .travis.yml       # файл конфигурации Travis CI
 ├── package.json      # файл npm зависимостей и настроек проекта
 ├── package-lock.json # lock-файл npm
-└── README.md         # документация проекта
+├── README.md         # документация проекта
+└── webpack.config.js # файл конфигурации Webpack
 ```
 
 [travis-image]: https://travis-ci.org/andreysgra/gulp-project-template.svg?branch=master

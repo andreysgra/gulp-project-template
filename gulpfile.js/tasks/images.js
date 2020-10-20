@@ -7,7 +7,7 @@ const changed = require('gulp-changed');
 const imagemin = require('gulp-imagemin');
 const imageminJpegoptim = require('imagemin-jpegoptim');
 
-const isProd = !!process.env.NODE_ENV;
+const isProd = Boolean(process.env.NODE_ENV);
 
 // Оптимизация изображений
 const images = () => {
