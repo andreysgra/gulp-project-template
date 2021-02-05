@@ -3,7 +3,6 @@
 const { paths: { source, desination } } = require('../settings');
 const { src, dest } = require('gulp');
 const gulpIf = require('gulp-if');
-const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
@@ -18,7 +17,6 @@ const styles = () => {
   const pluginsPostcss = [autoprefixer()];
 
   return src(`${source.styles}style.less`, { sourcemaps: true })
-    .pipe(plumber())
     .pipe(less())
     .pipe(postcss(pluginsPostcss))
     .pipe(csso({ forceMediaMerge: true, comments: false }))
