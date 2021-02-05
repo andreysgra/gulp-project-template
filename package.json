@@ -41,7 +41,6 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-less": "^4.0.1",
     "gulp-lintspaces": "^1.0.1",
-    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-svgstore": "^7.0.1",
