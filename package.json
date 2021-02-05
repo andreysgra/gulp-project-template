@@ -1,6 +1,6 @@
 {
   "name": "gulp-project-template",
-  "version": "5.0.0",
+  "version": "5.5.0",
   "description": "Базовый шаблон проекта с использованием Gulp, Less, Webpack",
   "private": true,
   "scripts": {

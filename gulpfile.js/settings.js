@@ -1,32 +1,29 @@
 'use strict';
 
-const dirs = {
-  src: './source/',
-  dest: './build/'
-};
+const [source, desination] = ['./source/', './build/'];
 
 module.exports = {
   paths: {
     source: {
-      root: dirs.src,
-      styles: dirs.src + 'styles/',
-      scripts: dirs.src + 'js/',
+      root: source,
+      styles: `${source}styles/`,
+      scripts: `${source}js/`,
       images: {
-        all: dirs.src + 'img/',
-        icons: dirs.src + 'img/icons/',
-        content: dirs.src + 'img/content/'
+        all: `${source}img/`,
+        icons: `${source}img/icons/`,
+        content: `${source}img/content/`
       },
-      fonts: dirs.src + 'fonts/'
+      fonts: `${source}fonts/`
     },
     desination: {
-      root: dirs.dest,
-      styles: dirs.dest + 'css/',
-      scripts: dirs.dest + 'js/',
+      root: desination,
+      styles: `${desination}css/`,
+      scripts: `${desination}js/`,
       images: {
-        all: dirs.dest + 'img/',
-        content: dirs.dest + 'img/content/'
+        all: `${desination}img/`,
+        content: `${desination}img/content/`
       },
-      fonts: dirs.dest + 'fonts/'
+      fonts: `${desination}fonts/`
     },
     dist: './dist'
   }
